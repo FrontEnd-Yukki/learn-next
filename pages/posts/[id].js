@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Layout from '../../components/layout'
+import Date from '../../components/date'
 import { getAllPostIds, getPostData } from '../../lib/posts'
 
 export async function getStaticProps({ params }) {
@@ -24,6 +25,7 @@ export default function Post({ postData }) {
     <Head>
       <title>{postData.title}</title>
     </Head>
+    <Date dateString={postData.date} />
     {postData.title}
     <br />
     {postData.id}
